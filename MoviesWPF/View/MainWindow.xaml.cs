@@ -60,7 +60,7 @@ namespace MoviesWPF
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             BookingRepo br = new BookingRepo();
-
+            br.AddBooking();
         }
     }
 }
