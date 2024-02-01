@@ -11,7 +11,7 @@ namespace MoviesWPF.Persistence
     {
         public List<Booking> Bookings;
 
-        public void AddBooking()
+        public void AddBooking(string allInfo)
         {
             //Bookings.Add(NewBookingConstructor);
         }

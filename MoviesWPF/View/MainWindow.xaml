@@ -55,7 +55,7 @@
         <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Margin="380,230,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15" TextChanged="EmailTextBox_TextChanged"/>
         <TextBox x:Name="PhoneNumberTextBox" HorizontalAlignment="Left" Margin="380,320,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15" TextChanged="PhoneNumberTextBox_TextChanged"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="380,388,0,0" VerticalAlignment="Top" Click="CancelButton_Click" Height="30" Width="80"/>
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="CornflowerBlue"/>
+        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="CornflowerBlue" Click="ConfirmButton_Click"/>
         <ComboBox HorizontalAlignment="Left" Margin="100,365,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
