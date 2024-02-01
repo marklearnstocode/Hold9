@@ -20,10 +20,39 @@ namespace MoviesWPF
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void PlayTimeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CinemaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
