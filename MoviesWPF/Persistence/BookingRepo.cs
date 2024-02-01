@@ -18,12 +18,12 @@ namespace MoviesWPF.Persistence
             string[] infoParts = allInfo.Split(";");
             newBooking.Cinema = infoParts[0];
             newBooking.City = infoParts[1];
-            newBooking.PlayTime = infoParts[2];
+            newBooking.PlayTime = Convert.ToDateTime(infoParts[2]);
             newBooking.MovieTitle = infoParts[3];
             newBooking.MovieGenre = infoParts[4];
-            newBooking.MovieLength = infoParts[5];
+            newBooking.MovieLength = Convert.ToDouble(infoParts[5]);
             newBooking.MovieInstructor = infoParts[6];
-            newBooking.PremiereDate = infoParts[7];
+            newBooking.PremiereDate = Convert.ToDateTime(infoParts[7]);
             newBooking.Email = infoParts[8];
             newBooking.PhoneNumber = infoParts[9];
 
