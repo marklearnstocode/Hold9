@@ -10,43 +10,52 @@
         <Label x:Name="CreateBookingLabel"
                Content="Create Booking"
                HorizontalAlignment="Center"
-               Margin="0,52,0,0"
+               Margin="0,30,0,0"
                VerticalAlignment="Top"
-               FontSize="35"/>
+               FontSize="30"/>
         <Label x:Name="Titlelb" Content="Title"
                HorizontalAlignment="Left"
-               Margin="100,120,0,0"
+               Margin="100,100,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
         <Label x:Name="PlayTimelb"
                Content="Play time"
                HorizontalAlignment="Left"
-               Margin="100,210,0,0"
+               Margin="100,190,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
         <Label x:Name="Cinemalb"
                Content="Cinema"
                HorizontalAlignment="Left"
-               Margin="100,300,0,0"
+               Margin="100,280,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
         <Label x:Name="TicketAmountlb"
                Content="Ticket amount"
-               HorizontalAlignment="Right"
-               Margin="0,120,75,0"
+               HorizontalAlignment="Left"
+               Margin="380,100,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
         <Label x:Name="Emaillb"
                Content="Email"
-               HorizontalAlignment="Right"
-               Margin="0,210,154,0"
+               HorizontalAlignment="Left"
+               Margin="380,190,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
         <Label x:Name="PhoneNumberlb"
                Content="Phone number"
-               HorizontalAlignment="Right"
-               Margin="0,300,70,0"
+               HorizontalAlignment="Left"
+               Margin="380,280,0,0"
                VerticalAlignment="Top"
                FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Margin="100,140,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="100,230,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="100,320,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="380,140,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="380,230,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="380,320,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="120" Height="40" FontSize="15"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="380,388,0,0" VerticalAlignment="Top" Click="Button_Click" Height="30" Width="80"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Click="Button_Click" Height="30" Width="80" Background="CornflowerBlue"/>
+
     </Grid>
 </Window>
