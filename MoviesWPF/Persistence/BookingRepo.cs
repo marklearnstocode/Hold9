@@ -63,6 +63,10 @@ namespace MoviesWPF.Persistence
                     bookingsFound.Remove(booking);
             }
         }
+        public List<Booking> GetAll()
+        {
+            return Bookings;
+
 
         public void Load_From_CSV()
         {
@@ -98,6 +102,7 @@ namespace MoviesWPF.Persistence
                     sw.WriteLine($"{booking.CinemaHall};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
                 }
             }
+
 
         }
     }
