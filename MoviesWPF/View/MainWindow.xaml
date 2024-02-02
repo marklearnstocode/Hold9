@@ -6,13 +6,11 @@
         xmlns:local="clr-namespace:MoviesWPF"
         mc:Ignorable="d"
 
-        Title="MainWindow" Height="500" Width="630" ResizeMode="NoResize">
-
-        Title="MainWindow" Height="400" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="1600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <StackPanel>
-            <Label Content="The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
+            <Label Content = "The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
             <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click"/>
             <Button x:Name = "DeleteBooking" Content = "Delete Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
             <Button x:Name = "UpdateBooking" Content = "Update Booking" HorizontalAlignment = "Left" Margin = "400,-140,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
@@ -102,7 +100,7 @@
         <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Margin="380,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="40" FontSize="15" TextChanged="EmailTextBox_TextChanged"/>
         <TextBox x:Name="PhoneNumberTextBox" HorizontalAlignment="Left" Margin="380,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="40" FontSize="15" TextChanged="PhoneNumberTextBox_TextChanged"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="380,388,0,0" VerticalAlignment="Top" Click="CancelButton_Click" Height="30" Width="80"/>
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="CornflowerBlue"/>
+        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="CornflowerBlue" Click="ConfirmButton_Click_1"/>
 
         
         <DatePicker HorizontalAlignment="Left" Margin="100,227,0,0" VerticalAlignment="Top" Width="120" FontSize="15"/>

@@ -11,7 +11,7 @@ namespace MoviesWPF.ViewModel
 {
     public class MainViewModel
     {
-        private BookingRepo bookingRepo = new BookingRepo();
+        public static BookingRepo bookingRepo = new BookingRepo();
         public ObservableCollection<BookingViewModel> BookingsVM { get; set; }
 
         public MainViewModel()

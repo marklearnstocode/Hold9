@@ -13,6 +13,7 @@ using MoviesWPF.Persistence;
 
 
 using MoviesWPF.Persistence;
+using MoviesWPF.ViewModel;
 
 namespace MoviesWPF
 {
@@ -64,15 +65,17 @@ namespace MoviesWPF
 
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        public void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        public void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            BookingRepo br = new BookingRepo();
-            br.AddBooking();
+            MainViewModel.bookingRepo.AddBooking(ToString);
+        br.AddBooking(allInfo);
         }
+
+        
     }
 }
