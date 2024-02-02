@@ -19,11 +19,18 @@ namespace MoviesWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
 
-            BookingRepo br = new BookingRepo();
+            PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
+        }
+        private void CreateBooking_Click(object sender, RoutedEventArgs e)
+        {
+            MoviesWPF.View.CreateBooking createBooking = new MoviesWPF.View.CreateBooking();
+            this.Visibility = Visibility.Hidden;
+            createBooking.ShowDialog();
         }
     }
 }
