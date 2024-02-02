@@ -16,43 +16,18 @@ namespace MoviesWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+            PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
         }
-        private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void CreateBooking_Click(object sender, RoutedEventArgs e)
         {
+            MoviesWPF.View.CreateBooking createBooking = new MoviesWPF.View.CreateBooking();
+            this.Visibility = Visibility.Hidden;
+            createBooking.ShowDialog();
 
-        }
-
-        private void PlayTimeTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CinemaTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
