@@ -10,13 +10,17 @@ namespace MoviesWPF.Persistence
 {
     public class BookingRepo
     {
-        public List<Booking> Bookings;
+        private List<Booking> Bookings;
+        public BookingRepo()
+        {
+            Bookings = new List<Booking>();
+        }
 
         public void AddBooking(string allInfo)
         {
             Booking newBooking = new Booking();
             string[] infoParts = allInfo.Split(";");
-            newBooking.Cinema = infoParts[0];
+            newBooking.CinemaHall = Convert.ToInt32(infoParts[0]);
             newBooking.City = infoParts[1];
             newBooking.PlayTime = Convert.ToDateTime(infoParts[2]);
             newBooking.MovieTitle = infoParts[3];
@@ -25,9 +29,9 @@ namespace MoviesWPF.Persistence
             newBooking.MovieInstructor = infoParts[6];
             newBooking.PremiereDate = Convert.ToDateTime(infoParts[7]);
             newBooking.Email = infoParts[8];
-            newBooking.PhoneNumber = infoParts[9];
+            newBooking.PhoneNumber = Convert.ToInt32(infoParts[9]);
 
-        Bookings.Add();
+            Bookings.Add(newBooking);
         }
         public List<Booking> GetTotalBookings(string movieTitle, DateTime playtime)
         {
@@ -37,9 +41,9 @@ namespace MoviesWPF.Persistence
                 if (booking.MovieTitle == movieTitle && booking.PlayTime == playtime)
                     bookingsFound.Add(booking);
             }
-            return Bookings;
+            return bookingsFound;
         }
-        public List<Booking> UpdateBooking(string movieTitle, DateTime playtime, DateTime newPlayTime)
+        public void UpdateBooking(string movieTitle, DateTime playtime, DateTime newPlayTime)
         {
             List<Booking> bookingsFound = new List<Booking>();
 
@@ -49,7 +53,7 @@ namespace MoviesWPF.Persistence
                     booking.PlayTime = newPlayTime;
             }
         }
-        public List<Booking> DeleteBooking(string movieTitle, DateTime playtime)
+        public void DeleteBooking(string movieTitle, DateTime playtime)
         {
             List<Booking> bookingsFound = new List<Booking>();
             foreach (Booking booking in Bookings)
@@ -60,25 +64,25 @@ namespace MoviesWPF.Persistence
         }
     }
 
-    #region csv_stuff
-    public void Load_From_CSV()
-    {
-        
-    }
+    //#region csv_stuff
+    //public void Load_From_CSV()
+    //{
 
-    public void Save_To_CSV()
-    {
-        // Using so the program automatically disposes & Closes() the file after operation is done
-        using (Streamwriter sw = new Streamwriter())
-        {
-            sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
+    //}
 
-            foreach (Booking booking in Bookings)
-            {
-                sw.WriteLine($"{booking.Cinema};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
-            }
-        }
-    }
-    #endregion csv_stuff
+    //public void Save_To_CSV()
+    //{
+    //    // Using so the program automatically disposes & Closes() the file after operation is done
+    //    using (Streamwriter sw = new Streamwriter())
+    //    {
+    //        sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
+
+    //        foreach (Booking booking in Bookings)
+    //        {
+    //            sw.WriteLine($"{booking.Cinema};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
+    //        }
+    //    }
+    //}
+    //#endregion csv_stuff
 }
-}
+

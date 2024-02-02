@@ -8,16 +8,11 @@ namespace MoviesWPF.Model
 {
     public class Booking
     {
-        public string Cinema;
         public string City;
-        public DateTime PlayTime;
-        public string MovieTitle;
         public string MovieGenre;
         public double MovieLength;
         public string MovieInstructor;
         public DateTime PremiereDate;
-        public string Email;
-        public int PhoneNumber;
 
         public string MovieTitle { get; set; }
         public DateTime PlayTime { get; set; }

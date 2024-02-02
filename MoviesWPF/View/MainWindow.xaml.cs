@@ -24,8 +24,6 @@ namespace MoviesWPF
             InitializeComponent();
 
             BookingRepo br = new BookingRepo();
-            br.Bookings = new List<Booking>();
-            br.Bookings.Add(Cinemaxx; Odense; 2020 - 04 - 03 21:00; 1917; Drama, Thriller, War; 01:57; Sam Mendes; 2020 - 01 - 10; djupedal @live.com; 94816860);
         }
     }
 }
