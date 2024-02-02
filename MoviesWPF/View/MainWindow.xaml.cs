@@ -9,6 +9,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+using MoviesWPF.Persistence;
+
 namespace MoviesWPF
 {
     /// <summary>
@@ -20,6 +23,7 @@ namespace MoviesWPF
         public MainWindow()
         {
             InitializeComponent();
+
             PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
         }
         private void CreateBooking_Click(object sender, RoutedEventArgs e)
@@ -27,7 +31,6 @@ namespace MoviesWPF
             MoviesWPF.View.CreateBooking createBooking = new MoviesWPF.View.CreateBooking();
             this.Visibility = Visibility.Hidden;
             createBooking.ShowDialog();
-
         }
     }
 }
