@@ -25,7 +25,7 @@ namespace MoviesWPF.ViewModel
             this.CinemaHall = booking.CinemaHall;
             this.TicketAmount = booking.TicketAmount;
             this.Email = booking.Email;
-            this.PhoneNumber = booking.Phonenumber;
+            this.PhoneNumber = booking.PhoneNumber;
         }
     }
 }

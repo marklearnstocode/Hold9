@@ -12,12 +12,25 @@ namespace MoviesWPF.ViewModel
     public class MainViewModel
     {
         private BookingRepo bookingRepo = new BookingRepo();
-        public void AddBooking()
+        public ObservableCollection<BookingViewModel> BookingsVM { get; set; }
+
+        public MainViewModel()
         {
-            Booking booking = AddBooking();
-            PersonViewModel PVM1 = new PersonViewModel(person);
-            PersonsVM.Add(PVM1);
-            SelectedPerson = PVM1;
+            BookingsVM = new ObservableCollection<BookingViewModel>();
+            foreach (Booking booking in bookingRepo.GetAll())
+            {
+                BookingViewModel BVM = new BookingViewModel(booking);
+                BookingsVM.Add(BVM);
+            }
         }
+        private BookingViewModel selectedBooking;
+
+        public BookingViewModel SelectedBooking
+        {
+            get { return selectedBooking; }
+            set { selectedBooking = value; }
+        }
+
+
     }
 }

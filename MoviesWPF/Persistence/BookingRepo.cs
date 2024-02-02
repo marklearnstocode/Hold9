@@ -62,6 +62,10 @@ namespace MoviesWPF.Persistence
                     bookingsFound.Remove(booking);
             }
         }
+        public List<Booking> GetAll()
+        {
+            return Bookings;
+        }
     }
 
     //#region csv_stuff
