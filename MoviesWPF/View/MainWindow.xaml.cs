@@ -11,6 +11,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MoviesWPF.Persistence;
 
+
+using MoviesWPF.Persistence;
+
 namespace MoviesWPF
 {
     /// <summary>
@@ -21,6 +24,8 @@ namespace MoviesWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            BookingRepo br = new BookingRepo();
         }
         private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
