@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MoviesWPF.Model;
+using System.IO;
 
 namespace MoviesWPF.Persistence
 {
@@ -65,28 +66,68 @@ namespace MoviesWPF.Persistence
         public List<Booking> GetAll()
         {
             return Bookings;
+
+
+        public void Load_From_CSV()
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader("Pr38_TheMovies.CSV"))
+                {
+                    string line = sr.ReadLine();
+                    string[] fields = line.Split(';');
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Booking couldn't load");
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        public void Save_To_CSV()
+        {
+            using (StreamWriter sw = new StreamWriter("Pr38_TheMovies.CSV"))
+            {
+                sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
+
+                foreach (Booking booking in Bookings)
+                {
+                    sw.WriteLine($"{booking.CinemaHall};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
+                }
+            }
+
+
         }
     }
 
-    //#region csv_stuff
-    //public void Load_From_CSV()
-    //{
-
-    //}
-
-    //public void Save_To_CSV()
-    //{
-    //    // Using so the program automatically disposes & Closes() the file after operation is done
-    //    using (Streamwriter sw = new Streamwriter())
-    //    {
-    //        sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
-
-    //        foreach (Booking booking in Bookings)
-    //        {
-    //            sw.WriteLine($"{booking.Cinema};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
-    //        }
-    //    }
-    //}
-    //#endregion csv_stuff
 }
+
+//#region csv_stuff
+//public void Load_From_CSV()
+//{
+
+//}
+
+//public void Save_To_CSV()
+//{
+//    // Using so the program automatically disposes & Closes() the file after operation is done
+//    using (Streamwriter sw = new Streamwriter())
+//    {
+//        sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
+
+//        foreach (Booking booking in Bookings)
+//        {
+//            sw.WriteLine($"{booking.Cinema};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
+//        }
+//    }
+//}
+//#endregion csv_stuff
+
 

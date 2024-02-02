@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoviesWPF"
         mc:Ignorable="d"
+
         Title="MainWindow" Height="500" Width="630" ResizeMode="NoResize">
+
+        Title="MainWindow" Height="400" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
     <Grid>
+        <StackPanel>
+            <Label Content="The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
+            <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click"/>
+            <Button x:Name = "DeleteBooking" Content = "Delete Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
+            <Button x:Name = "UpdateBooking" Content = "Update Booking" HorizontalAlignment = "Left" Margin = "400,-140,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
+            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "400,-50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
+            
+
+        </StackPanel>
+
 
         <StackPanel Margin="10">
             <ComboBox x:Name="CinemaComboBox" HorizontalAlignment="Left" Margin="90,312,0,0" Width="120" Height="30" SelectedIndex="0" FontSize="15">
