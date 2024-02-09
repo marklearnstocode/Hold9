@@ -14,6 +14,7 @@ using MoviesWPF.Persistence;
 
 using MoviesWPF.Persistence;
 using MoviesWPF.ViewModel;
+using MoviesWPF.View;
 
 namespace MoviesWPF
 {
@@ -22,47 +23,21 @@ namespace MoviesWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        MainViewModel mainViewModel;
+        CreateBooking createBookingWindow;
+
         public MainWindow()
         {
+            mainViewModel = new MainViewModel();
+            createBookingWindow = new CreateBooking();
             InitializeComponent();
 
             PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
         }
         private void CreateBooking_Click(object sender, RoutedEventArgs e)
         {
-            MoviesWPF.View.CreateBooking createBooking = new MoviesWPF.View.CreateBooking();
             this.Visibility = Visibility.Hidden;
-            createBooking.ShowDialog();
-        }
-        private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void PlayTimeTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CinemaTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            createBookingWindow.ShowDialog();
         }
 
         public void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -72,8 +47,7 @@ namespace MoviesWPF
 
         public void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            MainViewModel.bookingRepo.AddBooking(ToString);
-        br.AddBooking(allInfo);
+            
         }
 
         

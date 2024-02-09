@@ -1,66 +1,200 @@
-﻿<Window x:Class="MoviesWPF.View.CreateBooking"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MoviesWPF.View"
-        mc:Ignorable="d"
-        Title="CreateBooking" Height="550" Width="700" WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="MoviesWPF.View.CreateBooking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MoviesWPF.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="CreateBooking"
+    Width="700"
+    Height="550"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Grid>
-        <StackPanel Margin = "10" >
-            <ComboBox x:Name = "CinemaComboBox" HorizontalAlignment = "Left" Margin = "90,312,0,0" Width = "120" Height = "30" SelectedIndex = "0" FontSize = "15" >
-                <ComboBoxItem Visibility = "Collapsed" Content = "Select Cinema" />
-                <ComboBoxItem Content = "Cinemaxx" />
-                <ComboBoxItem Content = "Nordisk Film" />
-            </ComboBox >
-            <ComboBox x:Name = "CityComboBox" HorizontalAlignment = "Left" Margin = "90,4,0,0" Width = "120" Height = "30" SelectedIndex = "0" FontSize = "15" >
-                <ComboBoxItem Visibility = "Collapsed" Content = "Select City" />
-                <ComboBoxItem Content = "Odense" />
-                <ComboBoxItem Content = "Århus" />
-            </ComboBox >
+        <StackPanel Margin="10">
+            <ComboBox
+                x:Name="CinemaComboBox"
+                Width="120"
+                Height="30"
+                Margin="90,312,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15"
+                SelectedIndex="0"
+                SelectedItem="{Binding CinemaHall}">
+                <ComboBoxItem Content="Select Cinema" Visibility="Collapsed" />
+                <ComboBoxItem Content="Cinemaxx" />
+                <ComboBoxItem Content="Nordisk Film" />
+            </ComboBox>
+            <ComboBox
+                x:Name="CityComboBox"
+                Width="120"
+                Height="30"
+                Margin="90,4,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15"
+                SelectedIndex="0"
+                SelectedItem="{Binding City}">
+                <ComboBoxItem Content="Select City" Visibility="Collapsed" />
+                <ComboBoxItem Content="Odense" />
+                <ComboBoxItem Content="Århus" />
+            </ComboBox>
 
-            <ComboBox x:Name = "PlayTimeComboBox" HorizontalAlignment = "Left" Margin = "90,-225,0,0" Width = "120" Height = "25" SelectedIndex = "0" FontSize = "15" >
-                <ComboBoxItem Visibility = "Collapsed" Content = "Select Time" />
-                <ComboBoxItem Content = "11:00" />
-                <ComboBoxItem Content = "11:30" />
-                <ComboBoxItem Content = "12:00" />
-                <ComboBoxItem Content = "12:30" />
-                <ComboBoxItem Content = "13:00" />
-                <ComboBoxItem Content = "13:30" />
-                <ComboBoxItem Content = "14:00" />
-                <ComboBoxItem Content = "14:30" />
-                <ComboBoxItem Content = "15:00" />
-                <ComboBoxItem Content = "15:30" />
-                <ComboBoxItem Content = "16:00" />
-                <ComboBoxItem Content = "16:30" />
-                <ComboBoxItem Content = "17:00" />
-                <ComboBoxItem Content = "17:30" />
-                <ComboBoxItem Content = "18:00" />
-                <ComboBoxItem Content = "18:30" />
-                <ComboBoxItem Content = "19:00" />
-                <ComboBoxItem Content = "19:30" />
-                <ComboBoxItem Content = "20:00" />
-                <ComboBoxItem Content = "20:30" />
-                <ComboBoxItem Content = "21:00" />
-                <ComboBoxItem Content = "21:30" />
-            </ComboBox >
-        </StackPanel >
-        <Label x:Name = "CreateBookingLabel" Content = "Create Booking" HorizontalAlignment = "Center" Margin = "0,30,0,0" VerticalAlignment = "Top" FontSize = "30" FontFamily="Fonts/#Brawler"/>
-        <Label x:Name = "Titlelb" Content = "Title" HorizontalAlignment = "Left" Margin = "100,100,0,0" VerticalAlignment = "Top" FontSize = "20" />
-        <Label x:Name = "PlayTimelb" Content = "Play time" HorizontalAlignment = "Left" Margin = "100,190,0,0" VerticalAlignment = "Top" FontSize = "20" />
-        <Label x:Name = "Cinemalb" Content = "Cinema" HorizontalAlignment = "Left" Margin = "100,280,0,0" VerticalAlignment = "Top" FontSize = "20" />
-        <Label x:Name = "TicketAmountlb" Content = "Ticket amount" HorizontalAlignment = "Left" Margin = "380,100,0,0" VerticalAlignment = "Top" FontSize = "20" />
-        <Label x:Name = "Emaillb" Content = "Email" HorizontalAlignment = "Left" Margin = "380,190,0,0" VerticalAlignment = "Top" FontSize = "20" />
-        <Label x:Name = "PhoneNumberlb" Content = "Phone number" HorizontalAlignment = "Left" Margin = "380,280,0,0" VerticalAlignment = "Top" FontSize = "20" />
-      
-        <TextBox x:Name = "TitleTextBox" HorizontalAlignment = "Left" Margin = "100,140,0,0" TextWrapping = "Wrap" Text = "" VerticalAlignment = "Top" Width = "120" Height = "40" FontSize = "15" TextChanged = "TitleTextBox_TextChanged" />
-        <TextBox x:Name = "TicketAmountTextBox" HorizontalAlignment = "Left" Margin = "380,140,0,0" TextWrapping = "Wrap" Text = "" VerticalAlignment = "Top" Width = "120" Height = "40" FontSize = "15" TextChanged = "TicketAmountTextBox_TextChanged" />
-        <TextBox x:Name = "EmailTextBox" HorizontalAlignment = "Left" Margin = "380,230,0,0" TextWrapping = "Wrap" Text = "" VerticalAlignment = "Top" Width = "120" Height = "40" FontSize = "15" TextChanged = "EmailTextBox_TextChanged" />
-        <TextBox x:Name = "PhoneNumberTextBox" HorizontalAlignment = "Left" Margin = "380,320,0,0" TextWrapping = "Wrap" Text = "" VerticalAlignment = "Top" Width = "120" Height = "40" FontSize = "15" TextChanged = "PhoneNumberTextBox_TextChanged" />
-     
-        <Button x:Name = "CancelButton" Content = "Cancel" HorizontalAlignment = "Left" Margin = "380,388,0,0" VerticalAlignment = "Top" Click = "CancelButton_Click" Height = "30" Width = "80" />
-        <Button x:Name = "ConfirmButton" Content = "Confirm" HorizontalAlignment = "Left" Margin = "140,388,0,0" VerticalAlignment = "Top" Height = "30" Width = "80" Background = "CornflowerBlue" />
+            <ComboBox
+                x:Name="PlayTimeComboBox"
+                Width="120"
+                Height="25"
+                Margin="90,-225,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15"
+                SelectedIndex="0"
+                SelectedItem="{Binding PlayTime}">
+                <ComboBoxItem Content="Select Time" Visibility="Collapsed" />
+                <ComboBoxItem Content="11:00" />
+                <ComboBoxItem Content="11:30" />
+                <ComboBoxItem Content="12:00" />
+                <ComboBoxItem Content="12:30" />
+                <ComboBoxItem Content="13:00" />
+                <ComboBoxItem Content="13:30" />
+                <ComboBoxItem Content="14:00" />
+                <ComboBoxItem Content="14:30" />
+                <ComboBoxItem Content="15:00" />
+                <ComboBoxItem Content="15:30" />
+                <ComboBoxItem Content="16:00" />
+                <ComboBoxItem Content="16:30" />
+                <ComboBoxItem Content="17:00" />
+                <ComboBoxItem Content="17:30" />
+                <ComboBoxItem Content="18:00" />
+                <ComboBoxItem Content="18:30" />
+                <ComboBoxItem Content="19:00" />
+                <ComboBoxItem Content="19:30" />
+                <ComboBoxItem Content="20:00" />
+                <ComboBoxItem Content="20:30" />
+                <ComboBoxItem Content="21:00" />
+                <ComboBoxItem Content="21:30" />
+            </ComboBox>
+        </StackPanel>
+        <Label
+            x:Name="CreateBookingLabel"
+            Margin="0,30,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Create Booking"
+            FontFamily="Fonts/#Brawler"
+            FontSize="30" />
+        <Label
+            x:Name="Titlelb"
+            Margin="100,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Title"
+            FontSize="20" />
+        <Label
+            x:Name="PlayTimelb"
+            Margin="100,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Play time"
+            FontSize="20" />
+        <Label
+            x:Name="Cinemalb"
+            Margin="100,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cinema"
+            FontSize="20" />
+        <Label
+            x:Name="TicketAmountlb"
+            Margin="380,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ticket amount"
+            FontSize="20" />
+        <Label
+            x:Name="Emaillb"
+            Margin="380,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Email"
+            FontSize="20" />
+        <Label
+            x:Name="PhoneNumberlb"
+            Margin="380,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Phone number"
+            FontSize="20" />
 
-        <DatePicker HorizontalAlignment = "Left" Margin = "100,227,0,0" VerticalAlignment = "Top" Width = "120" FontSize = "15" />
+        <TextBox
+            x:Name="TitleTextBox"
+            Width="120"
+            Height="40"
+            Margin="100,140,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DataContext=""
+            FontSize="15"
+            Text="{Binding MovieTitle, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="TitleTextBox_TextChanged"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="TicketAmountTextBox"
+            Width="120"
+            Height="40"
+            Margin="380,140,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="15"
+            Text="{Binding TicketAmount, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="TicketAmountTextBox_TextChanged"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="EmailTextBox"
+            Width="120"
+            Height="40"
+            Margin="380,230,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="15"
+            Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="EmailTextBox_TextChanged"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="PhoneNumberTextBox"
+            Width="120"
+            Height="40"
+            Margin="380,320,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="15"
+            Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="PhoneNumberTextBox_TextChanged"
+            TextWrapping="Wrap" />
+
+        <Button
+            x:Name="CancelButton"
+            Width="80"
+            Height="30"
+            Margin="380,388,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="CancelButton_Click"
+            Content="Cancel" />
+        <Button
+            x:Name="ConfirmButton"
+            Width="80"
+            Height="30"
+            Margin="140,388,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="CornflowerBlue"
+            Click="ConfirmButton_Click"
+            Content="Confirm" />
+
+        <DatePicker
+            Width="120"
+            Margin="100,227,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="15" />
     </Grid>
 </Window>

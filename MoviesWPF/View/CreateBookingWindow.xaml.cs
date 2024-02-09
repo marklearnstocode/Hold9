@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoviesWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,21 @@ namespace MoviesWPF.View
     /// </summary>
     public partial class CreateBooking : Window
     {
+        public MainViewModel mainViewModel;
         public CreateBooking()
         {
             InitializeComponent();
-            PreviewKeyDown += (s, e) => 
-            { if (e.Key == Key.Escape) 
-                    Close(); 
-            };
+            
+            DataContext = mainViewModel;
         }
+        //public CreateBooking()
+        //{
+        //    InitializeComponent();
+        //    PreviewKeyDown += (s, e) => 
+        //    { if (e.Key == Key.Escape) 
+        //            Close(); 
+        //    };
+        //}
         private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
           
@@ -44,12 +52,12 @@ namespace MoviesWPF.View
 
         private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TicketAmountlb.Visibility = Visibility.Visible;
+            //TicketAmountlb.Visibility = Visibility.Visible;
         
-            if (TicketAmountTextBox != null)
-            {
-                TicketAmountlb.Visibility = Visibility.Collapsed;
-            }    
+            //if (TicketAmountTextBox != null)
+            //{
+            //    TicketAmountlb.Visibility = Visibility.Collapsed;
+            //}    
         }
 
         private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -82,5 +90,20 @@ namespace MoviesWPF.View
 
         }
 
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            mainViewModel.City = CityComboBox.Text;
+            mainViewModel.CinemaHall = int.Parse(CinemaComboBox.Text);
+            mainViewModel.PlayTime = DateTime.Parse(PlayTimeComboBox.Text);
+            mainViewModel.MovieTitle = TitleTextBox.Text;
+            mainViewModel.TicketAmount = int.Parse(TicketAmountTextBox.Text);
+            mainViewModel.Email = EmailTextBox.Text;
+            mainViewModel.PhoneNumber = int.Parse(PhoneNumberTextBox.Text);
+
+            MessageBox.Show("Booking saved successfully!");
+
+            this.Close();
+        }
     }
 }
