@@ -5,9 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoviesWPF"
         mc:Ignorable="d"
-
-        Title="MainWindow" Height="500" Width="630" ResizeMode="NoResize">
-
         Title="MainWindow" Height="400" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -20,9 +17,11 @@
             
 
         </StackPanel>
+    </Grid>
+</Window>
 
 
-        <StackPanel Margin="10">
+<!--<StackPanel Margin="10">
             <ComboBox x:Name="CinemaComboBox" HorizontalAlignment="Left" Margin="90,312,0,0" Width="120" Height="30" SelectedIndex="0" FontSize="15">
                 <ComboBoxItem Visibility="Collapsed" Content="Select Cinema"/>
                 <ComboBoxItem Content="Cinemaxx Odense"/>
@@ -105,6 +104,4 @@
         <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="140,388,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="CornflowerBlue"/>
 
         
-        <DatePicker HorizontalAlignment="Left" Margin="100,227,0,0" VerticalAlignment="Top" Width="120" FontSize="15"/>
-    </Grid>
-</Window>
+        <DatePicker HorizontalAlignment="Left" Margin="100,227,0,0" VerticalAlignment="Top" Width="120" FontSize="15"/>-->
