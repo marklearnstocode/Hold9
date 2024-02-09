@@ -44,12 +44,7 @@ namespace MoviesWPF.View
 
         private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //TicketAmountlb.Visibility = Visibility.Visible;
-        
-            //if (TicketAmountTextBox != null)
-            //{
-            //    TicketAmountlb.Visibility = Visibility.Collapsed;
-            //}    
+  
         }
 
         private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
