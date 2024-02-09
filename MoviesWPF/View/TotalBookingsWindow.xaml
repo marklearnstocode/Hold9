@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoviesWPF.View"
         mc:Ignorable="d"
-        Title="TotalBookingsWindow" Height="450" Width="800">
+        Title="TotalBookingsWindow" Height="550" Width="700" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Label Content="Total Bookings" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="200" Width="125" Margin="47,167,528,167"/>
+        <Label Content="Bookings" HorizontalAlignment="Left" Margin="73,137,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="SemiBold"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=7}" Height="200" Width="450" Margin="209,167,41,217"/>
+
+        <Button x:Name = "UpdateButton" Content = "Update" HorizontalAlignment = "Left" Margin = "320,388,0,0" VerticalAlignment = "Top" Click = "UpdateButton_Click" Height = "30" Width = "80" />
+        <Button x:Name = "DeleteButton" Content = "Delete" HorizontalAlignment = "Left" Margin = "190,388,0,0" VerticalAlignment = "Top" Click = "DeleteButton_Click" Height = "30" Width = "80" />
+        <Button x:Name = "CancelButton" Content = "Cancel" HorizontalAlignment = "Left" Margin = "450,388,0,0" VerticalAlignment = "Top" Click = "CancelButton_Click" Height = "30" Width = "80" />
+
+
+
+
     </Grid>
 </Window>

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MoviesWPF.Model;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.SqlClient;

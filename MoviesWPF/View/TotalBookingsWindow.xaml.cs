@@ -22,6 +22,28 @@ namespace MoviesWPF.View
         public TotalBookingsWindow()
         {
             InitializeComponent();
+            PreviewKeyDown += (s, e) =>
+            {
+                if (e.Key == Key.Escape)
+                    Close();
+            };
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            MoviesWPF.View.UpdateBookingWindow updateBooking = new MoviesWPF.View.UpdateBookingWindow();
+            this.Visibility = Visibility.Hidden;
+            updateBooking.ShowDialog();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -11,9 +11,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MoviesWPF.Persistence;
 
-
-using MoviesWPF.Persistence;
-
 namespace MoviesWPF
 {
     /// <summary>
@@ -35,12 +32,12 @@ namespace MoviesWPF
             createBooking.ShowDialog();
         }
 
-        private void UpdateBooking_Click(object sender, RoutedEventArgs e)
-        {
-            MoviesWPF.View.UpdateBookingWindow updateBooking = new MoviesWPF.View.UpdateBookingWindow();
-            this.Visibility = Visibility.Hidden;
-            updateBooking.ShowDialog();
-        }
+        //private void UpdateBooking_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MoviesWPF.View.UpdateBookingWindow updateBooking = new MoviesWPF.View.UpdateBookingWindow();
+        //    this.Visibility = Visibility.Hidden;
+        //    updateBooking.ShowDialog();
+        //}
 
         private void GetTotalBookings_Click(object sender, RoutedEventArgs e)
         {
@@ -49,11 +46,11 @@ namespace MoviesWPF
             totalBookings.ShowDialog();
         }
 
-        private void DeleteBooking_Click(object sender, RoutedEventArgs e)
-        {
-            MoviesWPF.View.DeleteBookingWindow deleteBooking = new MoviesWPF.View.DeleteBookingWindow();
-            this.Visibility = Visibility.Hidden;
-            deleteBooking.ShowDialog();
-        }
+        //private void DeleteBooking_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MoviesWPF.View.DeleteBookingWindow deleteBooking = new MoviesWPF.View.DeleteBookingWindow();
+        //    this.Visibility = Visibility.Hidden;
+        //    deleteBooking.ShowDialog();
+        //}
     }
 }

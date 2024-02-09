@@ -22,6 +22,11 @@ namespace MoviesWPF.View
         public UpdateBookingWindow()
         {
             InitializeComponent();
+            PreviewKeyDown += (s, e) =>
+            {
+                if (e.Key == Key.Escape)
+                    Close();
+            };
         }
     }
 }
