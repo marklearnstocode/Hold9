@@ -66,7 +66,7 @@ namespace MoviesWPF.Persistence
         public List<Booking> GetAll()
         {
             return Bookings;
-
+        }
 
         public void Load_From_CSV()
         {
@@ -108,26 +108,5 @@ namespace MoviesWPF.Persistence
     }
 
 }
-
-//#region csv_stuff
-//public void Load_From_CSV()
-//{
-
-//}
-
-//public void Save_To_CSV()
-//{
-//    // Using so the program automatically disposes & Closes() the file after operation is done
-//    using (Streamwriter sw = new Streamwriter())
-//    {
-//        sw.WriteLine("Biograf;By;Forestillingstidspunkt;Filmtitel;Filmgenre;Filmvarighed;Filminstruktør;Premieredato;Bookingmail;Bookingtelefonnummer"); // Initial format-definition line, as gotten from provided customer data file(s)
-
-//        foreach (Booking booking in Bookings)
-//        {
-//            sw.WriteLine($"{booking.Cinema};{booking.City};{booking.PlayTime};{booking.MovieGenre};{booking.MovieLength};{booking.MovieInstructor};{booking.PremiereDate};{booking.Email};{booking.PhoneNumber}");
-//        }
-//    }
-//}
-//#endregion csv_stuff
 
 
