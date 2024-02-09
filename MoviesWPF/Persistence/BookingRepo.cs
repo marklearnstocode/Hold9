@@ -6,16 +6,47 @@ using System.Text;
 using System.Threading.Tasks;
 using MoviesWPF.Model;
 using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace MoviesWPF.Persistence
 {
     public class BookingRepo
     {
+
+        string? ConnectionString;
+
         private List<Booking> Bookings;
         public BookingRepo()
         {
             Bookings = new List<Booking>();
+
+            IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+            string? ConnectionString = config.GetConnectionString("MyDBConnection");
+
         }
+
+        public void Create(Booking bookingToBeCreated)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Booking (PlayTime, CinemaHall, TicketAmount, Email, PhoneNumber, MovieTitle)" +
+                                                 "VALUES(@PlayTime,@CinemaHall,@TicketAmount,@Email,@PhoneNumber,@MovieTitle)" +
+                                                 "SELECT @@IDENTITY", con);
+                cmd.Parameters.Add("@PlayTime", SqlDbType.DateTime2).Value = bookingToBeCreated.PlayTime;
+                cmd.Parameters.Add("@CinemaHall", SqlDbType.Int).Value = bookingToBeCreated.CinemaHall;
+                cmd.Parameters.Add("@TicketAmount", SqlDbType.Int).Value = bookingToBeCreated.TicketAmount;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = bookingToBeCreated.Email;
+                cmd.Parameters.Add("@PhoneNumber", SqlDbType.Int).Value = bookingToBeCreated.PhoneNumber;
+                cmd.Parameters.Add("@MovieTitle", SqlDbType.NVarChar).Value = bookingToBeCreated.MovieTitle;
+                bookingToBeCreated.Id = Convert.ToInt32(cmd.ExecuteScalar());
+                booking.Add(bookingToBeCreated);
+            }
+        }
+
 
         public void AddBooking(string allInfo)
         {
