@@ -9,6 +9,7 @@ namespace MoviesWPF.Model
 {
     public class Booking
     {
+        public int Id { get; set; }
         public string City;
         public string MovieGenre;
         public double MovieLength;
