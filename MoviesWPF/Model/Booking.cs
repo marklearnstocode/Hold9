@@ -41,7 +41,7 @@ namespace MoviesWPF.Model
             Email = email;
             PhoneNumber = phoneNumber;
         }
-        public Booking(string movieTitle, DateTime playTime, int cinemaHall, int ticketAmount, string email, int phoneNumber): this(null, null, 0, null, null, movieTitle, playTime, 0, ticketAmount, email, phoneNumber)
+        public Booking(string movieTitle, DateTime? playTime, int cinemaHall, int ticketAmount, string email, int phoneNumber): this(null, null, 0, null, null, movieTitle, playTime, 0, ticketAmount, email, phoneNumber)
         {
 
         }

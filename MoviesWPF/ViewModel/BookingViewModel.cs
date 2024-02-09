@@ -12,7 +12,7 @@ namespace MoviesWPF.ViewModel
     {
         private Booking booking;
         public string MovieTitle { get; set; }
-        public DateTime PlayTime { get; set; }
+        public DateTime? PlayTime { get; set; }
         public int CinemaHall { get; set; }
         public int TicketAmount { get; set; }
         public string Email { get; set; }
