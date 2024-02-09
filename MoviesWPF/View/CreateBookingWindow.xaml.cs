@@ -44,34 +44,23 @@ namespace MoviesWPF.View
 
         private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TicketAmountlb.Visibility = Visibility.Visible;
+            //TicketAmountlb.Visibility = Visibility.Visible;
         
-            if (TicketAmountTextBox != null)
-            {
-                TicketAmountlb.Visibility = Visibility.Collapsed;
-            }    
+            //if (TicketAmountTextBox != null)
+            //{
+            //    TicketAmountlb.Visibility = Visibility.Collapsed;
+            //}    
         }
 
         private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (sender is TextBox box)
-            {
-                if (string.IsNullOrEmpty(box.Text))
-                    box.Background = (ImageBrush)FindResource("Email");
-                else
-                    box.Background = null;
-            }
+         
         }
 
         private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (sender is TextBox box)
-            {
-                if (string.IsNullOrEmpty(box.Text))
-                    box.Background = (ImageBrush)FindResource("Phone Number");
-                else
-                    box.Background = null;
-            }
+          
+            
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

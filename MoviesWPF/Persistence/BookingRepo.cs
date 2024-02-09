@@ -64,7 +64,8 @@ namespace MoviesWPF.Persistence
                             Email = dr["Email"].ToString(),
                             PhoneNumber = int.Parse(dr["PhoneNumber"].ToString()),
                             MovieTitle = dr["PhoneNumber"].ToString()
-                        }; Bookings.Add(booking);
+                        }; 
+                        Bookings.Add(booking);
                     }
                 }
             }

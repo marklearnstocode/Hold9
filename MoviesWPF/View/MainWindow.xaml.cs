@@ -34,45 +34,26 @@ namespace MoviesWPF
             this.Visibility = Visibility.Hidden;
             createBooking.ShowDialog();
         }
-        private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void UpdateBooking_Click(object sender, RoutedEventArgs e)
+        {
+            MoviesWPF.View.UpdateBookingWindow updateBooking = new MoviesWPF.View.UpdateBookingWindow();
+            this.Visibility = Visibility.Hidden;
+            updateBooking.ShowDialog();
         }
 
-        private void PlayTimeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void GetTotalBookings_Click(object sender, RoutedEventArgs e)
         {
-
+            MoviesWPF.View.TotalBookingsWindow totalBookings = new MoviesWPF.View.TotalBookingsWindow();
+            this.Visibility = Visibility.Hidden;
+            totalBookings.ShowDialog();
         }
 
-        private void CinemaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void DeleteBooking_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TicketAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void EmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
-        {
-            BookingRepo br = new BookingRepo();
-            
+            MoviesWPF.View.DeleteBookingWindow deleteBooking = new MoviesWPF.View.DeleteBookingWindow();
+            this.Visibility = Visibility.Hidden;
+            deleteBooking.ShowDialog();
         }
     }
 }

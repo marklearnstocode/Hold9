@@ -11,9 +11,9 @@
         <StackPanel>
             <Label Content="The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
             <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click"/>
-            <Button x:Name = "DeleteBooking" Content = "Delete Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
-            <Button x:Name = "UpdateBooking" Content = "Update Booking" HorizontalAlignment = "Left" Margin = "400,-140,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
-            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "400,-50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold"/>
+            <Button x:Name = "DeleteBooking" Content = "Delete Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="DeleteBooking_Click"/>
+            <Button x:Name = "UpdateBooking" Content = "Update Booking" HorizontalAlignment = "Left" Margin = "400,-140,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="UpdateBooking_Click"/>
+            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "400,-50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="GetTotalBookings_Click"/>
             
 
         </StackPanel>
