@@ -10,6 +10,18 @@
         <SolidColorBrush Color="#FF190B50" Opacity="1"/>
     </Window.Background>
 
+    <Window.Resources>
+        <ControlTemplate x:Key="MouseOverBackground" TargetType="Button">
+            <Border Background="{TemplateBinding Background}"  
+          BorderBrush="{TemplateBinding BorderBrush}"  
+          BorderThickness="{TemplateBinding BorderThickness}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+
+        </ControlTemplate>
+    </Window.Resources>
+ 
     <Grid>
         <StackPanel>
             <StackPanel.Background>
@@ -17,43 +29,24 @@
             </StackPanel.Background>
         </StackPanel>
         
-       
-            <Label x:Name="TheMovieslb" Content="The Movies" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Foreground="#FFD4D4D4" FontWeight="Bold" FontFamily="Ebrima" />
-            
-            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "290,150,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="GetTotalBookings_Click" Background="#FF4F33DF" Foreground="White" BorderBrush="Black">
+        <Label x:Name="TheMovieslb" Content="The Movies" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Foreground="#FFD4D4D4" FontWeight="Bold" FontFamily="Ebrima" />
+
+        <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "290,150,0,0" Template="{StaticResource MouseOverBackground}" VerticalAlignment = "Top"  FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="GetTotalBookings_Click" Background="#FF4F33DF" Foreground="White" BorderBrush="#FF4F33DF" Focusable="False" MouseEnter="GetTotalBookings_MouseEnter" MouseLeave="GetTotalBookings_MouseLeave">
             <Button.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF654DE0"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
-
             </Button.Resources>
-                
-                
         </Button>
-            
-            <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "50,150,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click" Background="#FF4F33DF" Foreground="White" BorderBrush="#FF4F33DF">
-                <Button.Resources>
+        <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "50,150,0,0" Template="{StaticResource MouseOverBackground}" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click" Background="#FF4F33DF" Foreground="White" BorderBrush="#FF4F33DF" Focusable="False" MouseEnter="CreateBooking_MouseEnter" MouseLeave="CreateBooking_MouseLeave">
+            <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
-                <Style TargetType="{x:Type Button}">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF654DE0"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-                </Button.Resources>
-            </Button>
+            </Button.Resources>
+        </Button>
 
-    
+   
     </Grid>
 </Window>
 

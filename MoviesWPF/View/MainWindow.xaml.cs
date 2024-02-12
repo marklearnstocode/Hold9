@@ -12,13 +12,14 @@ using System.Windows.Shapes;
 using MoviesWPF.Persistence;
 using System.Windows.Media;
 using MoviesWPF.ViewModel;
+using System.Drawing;
 
 namespace MoviesWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window    
     {
         MainViewModel mvm = new MainViewModel();
         public MainWindow()
@@ -48,6 +49,30 @@ namespace MoviesWPF
             this.Visibility = Visibility.Hidden;
             totalBookings.ShowDialog();
         }
+
+        // default color #FF4F33DF
+        // hover color #FF6C55E2
+        
+        SolidColorBrush defaultbrush = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, 79, 51, 223));
+        SolidColorBrush hoverbrush = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, 108, 85, 226));
+
+        private void GetTotalBookings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            GetTotalBookings.Background = hoverbrush;
+        }
+        private void GetTotalBookings_MouseLeave(object sender, MouseEventArgs e)
+        {
+            GetTotalBookings.Background = defaultbrush;
+        }
+        private void CreateBooking_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CreateBooking.Background = hoverbrush;
+        }
+        private void CreateBooking_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CreateBooking.Background = defaultbrush;
+        }
+
         //private void DeleteBooking_Click(object sender, RoutedEventArgs e)
         //{
         //    MoviesWPF.View.DeleteBookingWindow deleteBooking = new MoviesWPF.View.DeleteBookingWindow();
