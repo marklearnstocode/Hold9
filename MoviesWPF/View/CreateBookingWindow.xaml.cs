@@ -66,5 +66,9 @@ namespace MoviesWPF.View
 
         }
 
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

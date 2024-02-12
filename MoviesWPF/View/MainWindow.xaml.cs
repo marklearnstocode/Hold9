@@ -10,6 +10,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MoviesWPF.Persistence;
+using System.Windows.Media;
+using MoviesWPF.ViewModel;
 
 namespace MoviesWPF
 {
@@ -18,12 +20,13 @@ namespace MoviesWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        MainViewModel mvm = new MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
 
             PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
+            DataContext = mvm;
         }
         private void CreateBooking_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +48,10 @@ namespace MoviesWPF
             this.Visibility = Visibility.Hidden;
             totalBookings.ShowDialog();
         }
+
+
+        public Color color = (Color)ColorConverter.ConvertFromString("#151E3D");
+        System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#FFCC66");
 
         //private void DeleteBooking_Click(object sender, RoutedEventArgs e)
         //{

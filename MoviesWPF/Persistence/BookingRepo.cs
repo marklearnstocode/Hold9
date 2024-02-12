@@ -50,7 +50,11 @@ namespace MoviesWPF.Persistence
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                con.Open(); SqlCommand cmd = new SqlCommand("SELECT PlayTime, CinemaHall, TicketAmount, Email, PhoneNumber, MovieTitle FROM Booking", con); using (SqlDataReader dr = cmd.ExecuteReader())
+                con.Open(); 
+                
+                SqlCommand cmd = new SqlCommand("SELECT PlayTime, CinemaHall, TicketAmount, Email, PhoneNumber, MovieTitle FROM Booking", con); 
+                
+                using (SqlDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
@@ -74,7 +78,9 @@ namespace MoviesWPF.Persistence
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                con.Open(); SqlCommand cmd = new SqlCommand("UPDATE booking SET PlayTime = @PlayTime, CinemaHall = @CinemaHall, TicketAmount = @TicketAmount, Email = @Email, PhoneNumber = @PhoneNumber, MovieTitle = @MovieTitle WHERE Id = @Id", con);
+                con.Open(); 
+                
+                SqlCommand cmd = new SqlCommand("UPDATE booking SET PlayTime = @PlayTime, CinemaHall = @CinemaHall, TicketAmount = @TicketAmount, Email = @Email, PhoneNumber = @PhoneNumber, MovieTitle = @MovieTitle WHERE Id = @Id", con);
                 cmd.Parameters.Add("@Id", SqlDbType.NVarChar).Value = bookingToBeUpdated.Id;
                 cmd.ExecuteNonQuery();
             }
@@ -84,7 +90,9 @@ namespace MoviesWPF.Persistence
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                con.Open(); SqlCommand cmd = new SqlCommand("DELETE FROM Booking WHERE Id = @Id", con);
+                con.Open(); 
+                
+                SqlCommand cmd = new SqlCommand("DELETE FROM Booking WHERE Id = @Id", con);
                 cmd.Parameters.Add("@Id", SqlDbType.NVarChar).Value = bookingToBeDeleted.Id;
                 cmd.ExecuteNonQuery();
             }
@@ -136,10 +144,10 @@ namespace MoviesWPF.Persistence
         //            bookingsFound.Remove(booking);
         //    }
         //}
-        //public List<Booking> GetAll()
-        //{
-        //    return Bookings;
-        //}
+        public List<Booking> GetAll()
+        {
+            return Bookings;
+        }
 
         //public void Load_From_CSV()
         //{

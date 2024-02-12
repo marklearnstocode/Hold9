@@ -6,13 +6,25 @@
         xmlns:local="clr-namespace:MoviesWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.OpacityMask>
+        <ImageBrush ImageSource="/View/unsplash-cinema-20200623081605.png" TileMode="None"/>
+    </Window.OpacityMask>
+    <Window.Background>
+        <SolidColorBrush Color="#FF190B50" Opacity="0.705"/>
+    </Window.Background>
 
     <Grid>
+        <StackPanel Background="">
+            <StackPanel.Background>
+                <ImageBrush/>
+            </StackPanel.Background>
+
+        </StackPanel>
         <StackPanel>
-            <Label Content="The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="30" />
-            <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click"/>
-            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "400,-50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="GetTotalBookings_Click"/>
-            
+            <Label x:Name="TheMovieslb" Content="The Movies" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Foreground="#FFD4D4D4" FontWeight="Bold" FontFamily="Candara" />
+            <Button x:Name = "CreateBooking" Content = "Create Booking" HorizontalAlignment = "Left" Margin = "100,50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="CreateBooking_Click" Background="#FF4F33DF" Foreground="White"/>
+            <Button x:Name = "GetTotalBookings" Content = "Total Bookings" HorizontalAlignment = "Left" Margin = "400,-50,0,0" VerticalAlignment = "Top" FontSize="16" Height = "45" Width = "130" FontWeight="SemiBold" Click="GetTotalBookings_Click" Background="#FF4F33DF" Foreground="White"/>
+
 
         </StackPanel>
     </Grid>

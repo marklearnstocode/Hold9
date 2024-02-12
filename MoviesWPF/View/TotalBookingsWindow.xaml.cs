@@ -31,7 +31,9 @@ namespace MoviesWPF.View
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MainWindow mainWindow = new MoviesWPF.MainWindow();
+            this.Visibility = Visibility.Collapsed;
+            mainWindow.Show();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
