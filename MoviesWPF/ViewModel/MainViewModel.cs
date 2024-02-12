@@ -11,8 +11,6 @@ namespace MoviesWPF.ViewModel
 {
     public class MainViewModel
     {
-        System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#FFCC66");
-
         private BookingRepo bookingRepo = new BookingRepo();
         public ObservableCollection<BookingViewModel> BookingsVM { get; set; }
 

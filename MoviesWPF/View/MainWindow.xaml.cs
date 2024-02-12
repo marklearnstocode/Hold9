@@ -48,11 +48,6 @@ namespace MoviesWPF
             this.Visibility = Visibility.Hidden;
             totalBookings.ShowDialog();
         }
-
-
-        public Color color = (Color)ColorConverter.ConvertFromString("#151E3D");
-        System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#FFCC66");
-
         //private void DeleteBooking_Click(object sender, RoutedEventArgs e)
         //{
         //    MoviesWPF.View.DeleteBookingWindow deleteBooking = new MoviesWPF.View.DeleteBookingWindow();

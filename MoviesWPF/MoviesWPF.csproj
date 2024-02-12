@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="View\unsplash-cinema-20200623081605.png" />
+    <Resource Include="Images\unsplash-cinema-20200623081605.png" />
   </ItemGroup>
 
   <ItemGroup>
